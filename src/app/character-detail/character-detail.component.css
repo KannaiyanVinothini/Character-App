@@ -72,3 +72,8 @@ p {
     padding-top: 50px;
 }
 .details .justify-content-center { margin-bottom: -38px;}
+.just { color:rgb(158, 158, 158)}
+.card-body h3 {
+    text-transform: uppercase;
+    font-weight: 800;
+}
