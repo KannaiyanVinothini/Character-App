@@ -1,0 +1,27 @@
+<div class="list_view">
+  <div class="container-fluid" *ngIf="showList">
+    <div class="character_list" *ngFor="let character of characters">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-image">
+            <img [src]="character.image">
+          </div>
+
+          <div class="card-content">
+            <span class="card-title">
+              <a [routerLink]="['/characters', character.id]" (click)="hideListing(character,character.id)"> {{
+                character.name }}</a></span>
+            <p>{{ character.status }} - {{ character.species }}</p>
+            <p>{{ character.gender }} </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!showList">
+  <app-character-detail [data]="character"></app-character-detail>
+</div>
