@@ -1,3 +1,11 @@
 <main>
     <app-character-list [characters]="characters"></app-character-list>
+    <div class="container">
+        <nav>
+            <button type="button" [disabled]="page < 2" (click)="setPage(page - 1)">Previous</button>
+            <span class="text_view">Page: {{ page }}/{{ pages }}</span>
+            <button type="button" (click)="setPage(page + 1)">Next</button>
+          </nav>
+    </div>
+   
 </main>

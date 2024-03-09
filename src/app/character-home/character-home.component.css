@@ -1,0 +1,22 @@
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  main.is-loading {
+    pointer-events: none;
+    opacity: .5;
+  }
+  button {
+    border: 2px solid #f60;
+    color: #f60;
+    min-width: 10em;
+    border-radius: 50px;
+    background: #fff;
+  }
+  .text_view {
+    padding-left: 20px;
+    padding-right: 20px;
+  }

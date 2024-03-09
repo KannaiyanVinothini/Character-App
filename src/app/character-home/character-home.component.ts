@@ -9,6 +9,9 @@ import { ApiService } from '../services/api.service';
   providers: [ApiService]
 })
 export class CharacterHomeComponent implements OnInit {
+  
+  page = 1;
+  pages?: number;
 
   @Input() characters!: Character[];
 
@@ -19,9 +22,14 @@ export class CharacterHomeComponent implements OnInit {
   }
 
   loadCharacterPage() {
-    this.apiService.getList()
+    this.apiService.getList(this.page)
       .subscribe(data => {
         this.characters = data.results;
+        this.pages = data.info.pages;
       });
+  }
+  setPage(page: number) {
+    this.page = page;
+    this.loadCharacterPage();
   }
 }
